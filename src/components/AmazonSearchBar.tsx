@@ -13,7 +13,7 @@ function AmazonSearchBar() {
         border: "1px solid #ccc",
         borderRadius: "10px",
         overflow: "hidden",
-        width: "800px",
+        width: "60rem",
       }}
     >
       {/* Dropdown for Category Selection */}
@@ -31,6 +31,8 @@ function AmazonSearchBar() {
             padding: "14px 10px",
             border: "none",
             cursor: "pointer",
+            fontWeight:"700px",
+            fontSize:"16px"
           }}
         >
           All
