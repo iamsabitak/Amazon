@@ -1,6 +1,7 @@
 import React from "react";
-import { TextInput, Text, Anchor, Flex } from "@mantine/core";
-// import { Search } from "tabler-icons-react";
+import { Text, Anchor, Flex } from "@mantine/core";
+
+import AmazonSearchBar from "./AmazonSearchBar";
 
 export default function Navbar() {
   return (
@@ -12,14 +13,7 @@ export default function Navbar() {
         <Anchor href="#" style={{ textDecoration: "none" }} c="white">
           Deliver to sabita palce name
         </Anchor>
-        <TextInput
-          placeholder="Search..."
-          style={{
-            flex: 1,
-            border: "1px solid yellow",
-            borderRadius: "6px",
-          }}
-        />
+        <AmazonSearchBar />
 
         {/* <Group gap={"48px"} className="navbar-link"> */}
         <Anchor href="#" style={{ textDecoration: "none" }} c="white">
