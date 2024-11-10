@@ -1,17 +1,45 @@
 import React from "react";
-import { Text, Anchor, Flex } from "@mantine/core";
+import { Text, Anchor, Flex, Drawer } from "@mantine/core";
 
 import AmazonSearchBar from "./AmazonSearchBar";
 import {
   IconChevronDown,
   IconLocation,
+  IconMenu2,
   IconShoppingCart,
+  IconUserCircle,
 } from "@tabler/icons-react";
+import { useDisclosure } from "@mantine/hooks";
 
 export default function Navbar() {
+  const [opened, { open, close }] = useDisclosure(false);
+
   return (
     <>
       {" "}
+      <Drawer
+        m={0}
+        p={0}
+        opened={opened}
+        onClose={close}
+        title={
+          <Text
+            fw={800}
+            bg={"red"}
+            size="30px"
+            style={{
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
+          >
+            <IconUserCircle size={35} />
+            Hello, Sign In
+          </Text>
+        }
+        overlayProps={{ opacity: 0.5, blur: 4 }}
+      ></Drawer>
       <div style={{ backgroundColor: "#131921", padding: "15px 20px" }}>
         <Flex align="center" gap={35}>
           <Text size="lg" c="white">
@@ -65,8 +93,19 @@ export default function Navbar() {
         </Flex>
       </div>
       <div style={{ backgroundColor: "#232F3F", padding: "15px 20px" }}>
-        <Flex align="center" gap={40} c="white">
-          <Text fw={700} size="18px" style={{ cursor: "pointer" }}>
+        <Flex align="center" gap={39} c="white">
+          <Text
+            fw={700}
+            size="18px"
+            style={{
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              gap: "8px",
+            }}
+            onClick={open}
+          >
+            <IconMenu2 size={25} />
             All
           </Text>
           <Text fw={700} size="18px" style={{ cursor: "pointer" }}>
